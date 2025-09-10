@@ -12,6 +12,7 @@ import { Label } from '@/components/ui/label'
 import { Download, Upload, FileImage, Sun } from 'lucide-react'
 import { toast } from 'sonner'
 import jsPDF from 'jspdf'
+import logo from '@/assets/printard.webp'
 
 type PaperSize = 'A3' | 'A4'
 type CardSize = 'poker' | 'bridge' | 'mini' | 'square'
@@ -165,7 +166,10 @@ export const CardLayoutDesigner = () => {
       {/* Sidebar */}
       <div className='w-80 bg-sidebar border-r border-border p-6 flex flex-col gap-6'>
         <div>
-          <h1 className='text-2xl font-bold text-foreground mb-2'>Printard</h1>
+          <h1 className='text-2xl flex gap-2 font-bold items-center  text-foreground mb-2'>
+            <img className='size-8' src={logo} alt='' />
+            Printard
+          </h1>
           <p className='text-muted-foreground text-sm'>
             Crea layouts perfectos para tus cartas de juego
           </p>
