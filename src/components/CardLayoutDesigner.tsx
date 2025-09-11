@@ -22,17 +22,7 @@ interface CardData {
   image?: string
 }
 
-const PAPER_SIZES = {
-  A4: { width: 210, height: 297 }, // mm
-  A3: { width: 297, height: 420 }, // mm
-}
 
-const CARD_SIZES = {
-  poker: { width: 63, height: 88, name: 'Poker (63×88mm)' },
-  bridge: { width: 57, height: 89, name: 'Bridge (57×89mm)' },
-  mini: { width: 44, height: 67, name: 'Mini (44×67mm)' },
-  square: { width: 70, height: 70, name: 'Cuadrada (70×70mm)' },
-}
 
 export const CardLayoutDesigner = () => {
   const [paperSize, setPaperSize] = useState<PaperSize>('A4')
