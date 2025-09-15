@@ -13,6 +13,7 @@ import { Download, Upload, FileImage, Sun } from 'lucide-react'
 import { toast } from 'sonner'
 import jsPDF from 'jspdf'
 import logo from '@/assets/printard.webp'
+import {CARD_SIZES,PAPER_SIZES} from '../CONFIG_SIZES'
 
 type PaperSize = 'A3' | 'A4'
 type CardSize = 'poker' | 'bridge' | 'mini' | 'square'
