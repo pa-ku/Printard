@@ -51,8 +51,8 @@ All colors MUST be HSL.
     );
     --gradient-accent: linear-gradient(
       135deg,
-      hsl(25 95% 53%),
-      hsl(25 95% 65%)
+      hsl(308, 95%, 53%),
+      hsl(311, 96%, 65%)
     );
     --shadow-card: 0 2px 8px hsl(240 10% 9% / 0.08);
     --shadow-hover: 0 4px 16px hsl(240 10% 9% / 0.12);
@@ -143,4 +143,8 @@ All colors MUST be HSL.
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #202020;
+}
+
+.btn-default{
+  @apply bg-pink-500 p-2 rounded-lg flex items-center justify-center gap-2 font-semibold dark:bg-pink-900/50 dark:text-pink-500 hover:brightness-110 text-white
 }
