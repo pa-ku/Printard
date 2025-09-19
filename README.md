@@ -1,73 +1,120 @@
-# Welcome to your Lovable project
+# Printard
 
-## Project info
+Crea, edita y exporta layouts de cartas (cards) listos para impresión. Printard ofrece un flujo de trabajo eficiente para diseñar cartas con textos, imágenes, marcos, fondos, íconos, códigos QR/barras y más, con controles de tamaño, márgenes y sangrado profesional.
 
-**URL**: https://lovable.dev/projects/c865ada5-0416-44d3-a5b0-21fcd4414c47
+## ✨ Características
 
-## How can I edit this code?
+- Editor de layouts de cartas con guía de retícula y alineación.
+- Plantillas reutilizables por tamaño y juego/colección.
+- Soporte de capas: fondo, arte, marco, texto, símbolos, etc.
+- Tipografías personalizadas, estilos y efectos (tracking, leading, sombra/desborde).
+- Variables y datasets: importación de datos por CSV/JSON para generar múltiples cartas.
+- Inserción de imágenes (PNG/JPG/SVG) y assets reutilizables.
+- Campos dinámicos: atributos, rareza, costo, fuerza, etc.
+- Generación por lote: render masivo de cartas desde una planilla de datos.
+- Exportación a PDF/PNG con control de DPI, sangrado y marcas de corte.
+- Hojas de impresión: n×m cartas por página, con espaciado configurable.
+- Perfiles de color (opcional) y control de negro enriquecido para impresión.
 
-There are several ways of editing your application.
+## 📦 Requisitos
 
-**Use Lovable**
+- [Opcional] Python 3.8+ o Node.js 18+ (dependiendo del stack de este repo).
+- Sistema operativo Windows/macOS/Linux.
+- Paquetes/fuentes del proyecto (ver `requirements.txt` o `package.json` si aplica).
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c865ada5-0416-44d3-a5b0-21fcd4414c47) and start prompting.
+Nota: Si este repositorio incluye un ejecutable o app empaquetada, puedes omitir la instalación de dependencias y pasar directo a "Uso".
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Instalación
 
-**Use your preferred IDE**
+1) Clonar el repositorio:
+```bash
+git clone https://github.com/yourusername/Printard.git
+cd Printard
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2) Instalar dependencias (elige el que corresponda):
+- Python
+```bash
+pip install -r requirements.txt
+```
+- Node.js
+```bash
+npm install
+# o
+pnpm install
+# o
+yarn install
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ▶️ Uso
 
-Follow these steps:
+- Modo interactivo (editor):
+  1. Abre la aplicación/servidor según el stack del proyecto.
+  2. Crea un layout o abre una plantilla existente.
+  3. Define áreas: arte, marco, textos, iconos, etc.
+  4. Ajusta tamaño de carta, márgenes y sangrado.
+  5. Guarda la plantilla para reutilizarla con datasets.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Render por lote (datasets):
+  1. Prepara un archivo CSV/JSON con columnas como `titulo`, `descripcion`, `rareza`, `costo`, `imagen`, etc.
+  2. Asocia el dataset a una plantilla.
+  3. Genera las cartas de forma masiva.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Ejemplos de comandos (ajusta a tu stack real):
+```bash
+# Python
+python main.py
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Node.js
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## ⚙️ Configuración
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Tamaño de carta: por ejemplo 63×88 mm (tipo estándar) u otros tamaños personalizados.
+- Sangrado (bleed): recomendado 3 mm.
+- Márgenes de seguridad: recomendado 3–5 mm.
+- Resolución: 300 DPI para impresión.
+- Fuentes: coloca tus tipografías en `assets/fonts/` y cárgalas en la plantilla.
+- Imágenes: coloca arte y marcos en `assets/images/`.
+- Variables: define campos dinámicos en la plantilla (p. ej. `{titulo}`, `{ataque}`, `{defensa}`).
 
-**Use GitHub Codespaces**
+## 🖨️ Exportación e impresión
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Exporta a PDF con sangrado y marcas de corte cuando sea necesario.
+- Genera hojas de impresión con grilla n×m para optimizar papel.
+- Verifica perfiles de color (CMYK) si tu imprenta lo requiere.
+- Revisa sobreimpresiones/negro enriquecido para textos y marcos oscuros.
 
-## What technologies are used for this project?
+## 🗂️ Estructura sugerida (puede variar)
 
-This project is built with:
+```
+Printard/
+├─ assets/
+│  ├─ fonts/
+│  └─ images/
+├─ templates/           # Plantillas de layouts
+├─ datasets/            # CSV/JSON con datos de cartas
+├─ exports/             # Salidas (PDF/PNG)
+├─ src/                 # Código fuente
+├─ README.md            # Este archivo
+└─ requirements.txt / package.json
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🤝 Contribuir
 
-## How can I deploy this project?
+¡Las contribuciones son bienvenidas! Para proponer mejoras:
+- Crea un fork del repositorio.
+- Abre una rama para tu feature/fix.
+- Envía un Pull Request con una descripción clara y capturas si aplica.
 
-Simply open [Lovable](https://lovable.dev/projects/c865ada5-0416-44d3-a5b0-21fcd4414c47) and click on Share -> Publish.
+## 📄 Licencia
 
-## Can I connect a custom domain to my Lovable project?
+Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más información.
 
-Yes, you can!
+## 📬 Contacto
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Autor: [Tu Nombre]
+- Email: [tu-email@dominio.com]
+- Issues y sugerencias: usa la pestaña "Issues" del repositorio.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
